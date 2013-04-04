@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  band_id: 1
+  single_id: 1
+  release_date: 2013-04-04 11:28:25
+
+two:
+  band_id: 1
+  single_id: 1
+  release_date: 2013-04-04 11:28:25
