@@ -1,0 +1,8 @@
+<h1>Artist Name: <%= @artist.name %></h1>
+
+<h2>Bands</h2>
+<ol>
+  <% @artist.bands.each do |band| %>
+    <li> <%= link_to band.name, band_path(band.id) %> </li>
+  <% end %>
+</ol>

@@ -1,0 +1,69 @@
+<% @states = ["AL",
+"AK",
+"AZ",
+"AR",
+"CA",
+"CO",
+"CT",
+"DE",
+"FL",
+"GA",
+"HI",
+"ID",
+"IL",
+"IN",
+"IA",
+"KS",
+"KY",
+"LA",
+"ME",
+"MD",
+"MA",
+"MI",
+"MN",
+"MS",
+"MO",
+"MT",
+"NE",
+"NV",
+"NH",
+"NJ",
+"NM",
+"NY",
+"NC",
+"ND",
+"OH",
+"OK",
+"OR",
+"PA",
+"RI",
+"SC",
+"SD",
+"TN",
+"TX",
+"UT",
+"VT",
+"VA",
+"WA",
+"WV",
+"WI",
+"WY"].map { |el| [el, el] } %>
+
+<%= form_for(@band) do |f| %>
+  <% @band.errors.full_messages.each do |error| %>
+    <%= error %>
+  <% end %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %>
+    <%= f.select(:state, @states)%>
+  </p>
+  <%= f.submit %>
+<% end %>

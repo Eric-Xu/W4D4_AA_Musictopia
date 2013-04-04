@@ -1,0 +1,10 @@
+<h1>Band Page</h1>
+<h2>Name: <%= @band.name %> Location: <%= @band.city %>, <%= @band.state %></h2>
+<h3>Artists</h3>
+<ol>
+  <% @band.artists.each do |artist| %>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+  <% end %>
+</ol>
+
+<p><%= link_to "Back to All Bands", bands_path %></p>

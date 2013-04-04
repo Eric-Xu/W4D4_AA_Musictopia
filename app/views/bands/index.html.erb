@@ -1,0 +1,20 @@
+<h1>All Bands</h1>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> City </th>
+    <th> State </th>
+  </tr>
+<% @bands.each do |band| %>
+  <tr>
+    <td> <%= link_to band.name, band_path(band) %> </td>
+    <td> <%= band.city %> </td>
+    <td> <%= band.state %> </td>
+    <td> <%= link_to "edit", edit_band_path(band) %></td>
+    <td> <%= link_to "delete", band_path(band),
+                              confirm: "Are you sure?",
+                              method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "List New Band", new_band_path %>
