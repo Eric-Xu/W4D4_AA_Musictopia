@@ -3,23 +3,17 @@
   <% @single.errors.full_messages.each do |error| %>
     <%= error %>
   <% end %>
+
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </p>
 
   <% Artist.all.each do |artist| %>
-
-  <label>
-    <%= radio_button_tag(
-      "single[artist_id]",
-      artist.id
-    )%>
-
-    <%= artist.name %>
-  </label>
+    <label>
+      <%= radio_button_tag("single[artist_id]", artist.id)%>
+      <%= artist.name %>
+    </label>
   <% end %>
-
   <%= f.submit %>
-
 <% end %>

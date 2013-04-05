@@ -1,5 +1,6 @@
-<h1>Band Page</h1>
-<h2>Name: <%= @band.name %> Location: <%= @band.city %>, <%= @band.state %></h2>
+<h1>Welcome to the Band Show Page</h1>
+<h3>Name: <%= @band.name %></h3>
+<h3>Location: <%= @band.city %>, <%= @band.state %></h3>
 <h3>Artists</h3>
 <ol>
   <% @band.artists.each do |artist| %>
