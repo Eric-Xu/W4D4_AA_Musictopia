@@ -4,5 +4,17 @@
   <% end %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
+  <% Band.all.each do |band| %>
+  <label>
+    <%= check_box_tag(
+      "artist[band_ids][]",
+      band.id,
+      @artist.band_ids.include?(band.id)
+    )%>
+    <%= band.name %>
+  </label>
+  <% end %>
+  <% hidden_field_tag "artist[band_ids][]" %>
+
   <%= f.submit %>
 <% end %>

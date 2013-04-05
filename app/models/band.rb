@@ -1,5 +1,6 @@
 class Band < ActiveRecord::Base
-  attr_accessible :city, :name, :state
+  attr_accessible :city, :name, :state, :artist_ids
+
   validates :name, :presence => true
 
   has_many :artists_bands

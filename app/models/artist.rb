@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :band_ids
 
   has_many :singles
   has_many :artists_bands

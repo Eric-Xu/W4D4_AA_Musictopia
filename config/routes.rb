@@ -7,4 +7,5 @@ Musictopia::Application.routes.draw do
   end
 
   resources :bands
+  resources :singles
 end

@@ -47,7 +47,7 @@
 "WA",
 "WV",
 "WI",
-"WY"].map { |el| [el, el] } %>
+"WY"].map { |el| [el] } %>
 
 <%= form_for(@band) do |f| %>
   <% @band.errors.full_messages.each do |error| %>
@@ -65,5 +65,18 @@
     <%= f.label :state %>
     <%= f.select(:state, @states)%>
   </p>
+    <% Artist.all.each do |artist| %>
+    <label>
+      <%= check_box_tag(
+            "band[artist_ids][]",
+            artist.id,
+            @band.artist_ids.include?(artist.id)
+          ) %>
+      <%= artist.name %>
+    </label>
+      <br>
+    <% end %>
+    <%= hidden_field_tag "band[artist_ids][]"%>
   <%= f.submit %>
 <% end %>
+

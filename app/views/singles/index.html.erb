@@ -1,0 +1,15 @@
+<h1>All the Singles!</h1>
+<table>
+  <tr>
+    <th>Single Name</th>
+    <th>Artist</th>
+    <th>Release Date</th>
+  </tr>
+  <% @singles.each do |single| %>
+  <tr>
+    <td><%= single.title %></td>
+    <td><%= single.artist.name %></td>
+    <td><%= single.release_date %></td>
+  </tr>
+  <% end %>
+</table>
